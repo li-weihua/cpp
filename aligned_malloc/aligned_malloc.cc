@@ -1,13 +1,15 @@
-#include <stdlib.h>
+#include <cstdlib>
 
 #include "aligned_malloc.h"
+
+namespace cpp {
 
 void *aligned_malloc(size_t memsize, size_t alignment) {
   void *p1 = NULL;
   void **p2 = NULL;
 
   size_t offset = (alignment - 1) + sizeof(void *);
-  p1 = malloc(memsize + offset);
+  p1 = std::malloc(memsize + offset);
   if (NULL == p1) {
     return NULL;
   }
@@ -21,3 +23,6 @@ void *aligned_malloc(size_t memsize, size_t alignment) {
 void aligned_free(void *p) {
   free(((void **)p)[-1]);
 }
+
+} // namespace cpp
+
