@@ -1,6 +1,6 @@
-#include <cstdlib>
-
 #include "aligned_malloc.h"
+
+#include <cstdlib>
 
 namespace cpp {
 
