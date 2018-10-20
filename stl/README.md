@@ -1,2 +1,4 @@
-todo
- - [ ] write vector and array container!
+my plan:
+ - [ ] implement stl library: array, vector, ...
+ - [ ] write a logging library!
+ - [ ] write a memory managment library!
