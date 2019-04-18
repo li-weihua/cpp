@@ -9,3 +9,5 @@ This repository records various small c/c++ programs when I am learning!
 * [func_pointer](./func_pointer) simple function pointer dispatch example.
 
 * [registry](./registry) simple registry example.
+
+* [python_call](./python_call) python call c/c++ example.
