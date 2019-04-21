@@ -11,3 +11,5 @@ This repository records various small c/c++ programs when I am learning!
 * [registry](./registry) simple registry example.
 
 * [python_call](./python_call) python call c/c++ example.
+
+* [dynamic_lib](./dynamic_lib) dynamic library example.
