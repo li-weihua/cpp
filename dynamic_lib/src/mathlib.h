@@ -14,6 +14,8 @@
 #endif // __GNUC__
 #endif
 
+MATH_API double mysin(double x);
+
 class MATH_API MathLib {
   public:
     double sin(double x);
