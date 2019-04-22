@@ -6,10 +6,10 @@ int main() {
 
   double x = 1.5;
   
-  MathLib m;
+  mymath::MathLib m;
 
-  std::cout << "mysin(1.5) = " << mysin(1.5) << std::endl;
-  std::cout << "MathLib::sin(1.5) = " << m.sin(1.5) << std::endl;
+  std::cout << "mymath::mysin(1.5) = " << mymath::mysin(1.5) << std::endl;
+  std::cout << "mymath::MathLib::sin(1.5) = " << m.sin(1.5) << std::endl;
 
   return 0;
 }

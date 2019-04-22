@@ -1,3 +1,3 @@
 todo
-- [ ] function/class in namespace
+- [x] function/class in namespace
 - [ ] using plugin method open dynamic library

@@ -14,9 +14,13 @@
 #endif // __GNUC__
 #endif
 
+namespace mymath {
+
 MATH_API double mysin(double x);
 
 class MATH_API MathLib {
   public:
     double sin(double x);
 };
+
+} // namespace mymath
