@@ -23,4 +23,14 @@ class MATH_API MathLib {
     double sin(double x);
 };
 
+class MathBase {
+public:
+  virtual double sin(double x) = 0;
+};
+
 } // namespace mymath
+
+// create and delete object api
+extern "C" MATH_API mymath::MathBase* GetMathObject();
+extern "C" MATH_API void DeleteMathObject(mymath::MathBase*);
+
