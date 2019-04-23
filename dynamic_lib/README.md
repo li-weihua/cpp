@@ -8,6 +8,7 @@ CMakeLists.txt explain
 1. At beginning, specify the miminum cmake version
 ```cmake
 cmake_minimum_required(VERSION 3.5)
+```
 
 2. When build the release type on linux, cmake will add **-O3** option which should be deleted!
 ```cmake
