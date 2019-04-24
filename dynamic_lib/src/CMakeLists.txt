@@ -12,3 +12,8 @@ target_compile_options(mathlib PRIVATE "$<$<OR:$<CONFIG:Release>,$<CONFIG:RelWit
 add_executable(call_test call_test.cc)
 target_link_libraries(call_test  mathlib)
 
+# target3: build test example
+if (NOT MSVC)
+  add_executable(dl_test dl_test.cc)
+  target_link_libraries(dl_test dl)
+endif()

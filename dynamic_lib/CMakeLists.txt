@@ -15,4 +15,7 @@ endmacro()
 # remove c++ floag -O3
 remove_cxx_flag("-O3")
 
+# c++11
+set(CMAKE_CXX_STANDARD 11)
+
 add_subdirectory(src)
