@@ -1,2 +1,4 @@
-superfast.so:
-	g++ -I /usr/local/include/python3.5/ -I /usr/include/python3.5m -shared -fPIC -std=c++11 -O2 -o superfastcode.so superfastcode.cc
+inc = $(shell python3 -m pybind11 --includes)
+flags = -O3 -Wall -fPIC -shared -std=c++11 
+example:
+	g++ ${flags} ${inc} example.cpp -o example.so
