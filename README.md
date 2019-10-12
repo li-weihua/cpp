@@ -16,3 +16,26 @@ This repository records various small c/c++ programs when I am learning!
 
 * compiler and OS macro can be refer to [./macro/README.md](./macro/README.md),  cpu arch can be refer to [./macro/cpu_arch.h](./macro/cpu_arch.h)
 
+## c++ learning
+Q: what's the difference between initializer list vs constructor?
+
+A: They are not the same if objects are *non-POD* (i.e. non-Plain Old Data) types:
+```c++
+public: 
+  Thing(int _foo, int _bar){
+    member1 = _foo;
+    member2 = _bar;
+}
+```
+is equivalent to
+```c++
+public: 
+  Thing(int _foo, int _bar) : member1(), member2(){
+    member1 = _foo;
+    member2 = _bar;
+}
+```
+because they will be initialized before the constructor body starts executing, so basically twice the work is done. That also means, if the type of these members don't have default constructor, then your code will not compile.
+
+ps: Initializer List is the only way to initialize const members! 
+
