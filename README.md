@@ -1,4 +1,4 @@
-# cpp
+# c++ learning: examples, libraries and notes
 
 This repository records various small c/c++ programs when I am learning!
 
@@ -13,3 +13,6 @@ This repository records various small c/c++ programs when I am learning!
 * [python_call](./python_call) python call c/c++ example.
 
 * [dynamic_lib](./dynamic_lib) dynamic library example.
+
+* compiler and OS macro can be refer to [./macro/README.md](./macro/README.md),  cpu arch can be refer to [./macro/cpu_arch.h](./macro/cpu_arch.h)
+
