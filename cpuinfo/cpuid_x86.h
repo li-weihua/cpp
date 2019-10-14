@@ -29,7 +29,7 @@ cpuid_regs cpuid(int32_t eax) {
   __asm__ ("cpuid\n\t"
            : "=a" (r.eax), "=b" (r.ebx), "=c" (r.ecx), "=d" (r.edx)
            : "0" (eax));
-  #elif // windows
+  #else // windows
   int32_t regs[4];
   __cpuid(regs, eax);
   r.eax = regs[0];
@@ -48,7 +48,7 @@ cpuid_regs cpuidex(int32_t eax, int32_t ecx) {
   __asm__ ("cpuid\n\t"
            : "=a" (r.eax), "=b" (r.ebx), "=c" (r.ecx), "=d" (r.edx)
            : "0" (eax), "2" (ecx));
-  #elif // windows
+  #else // windows
   int32_t regs[4];
   __cpuidex(regs, eax, ecx);
   r.eax = regs[0];

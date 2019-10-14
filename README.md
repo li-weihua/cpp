@@ -16,6 +16,8 @@ This repository records various small c/c++ programs when I am learning!
 
 * compiler and OS macro can be refer to [./macro/README.md](./macro/README.md),  cpu arch can be refer to [./macro/cpu_arch.h](./macro/cpu_arch.h)
 
+* [cpuinfo](./cpuinfo) get cpu isa.
+
 ## c++ learning
 Q: what's the difference between initializer list vs constructor?
 

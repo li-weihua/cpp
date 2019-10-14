@@ -1,5 +1,12 @@
 #include "instruction_set.h"
-#include "x86_cpuid.h"
+
+// x86
+#if defined(CPU_X86) || defined(CPU_X86_64)
+#include "cpuid_x86.h"
+// arm 
+#elif defined(_M_AMD64) || defined(CPU_X86_64)
+#include "cpuid_arm.h"
+#endif
 
 InstructionSet::InstructionSet(): 
   level_(0),
