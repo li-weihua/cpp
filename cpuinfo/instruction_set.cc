@@ -48,7 +48,7 @@ InstructionSet::InstructionSet():
   // then check the operating system also support XMM and YMM state
   bool osxsave = regs.ecx & (1<<27);
   bool b_avx = regs.ecx & (1<<28);
-  bool os_support = (xgetbv(0) & 6 == 6);
+  bool os_support = ((xgetbv(0) & 6) == 6);
 
   if (osxsave && b_avx && os_support) avx_ = true;
 
@@ -72,7 +72,7 @@ InstructionSet::InstructionSet():
   // intel document convetion bit 0-31, so xcr0[7:5] means 6,7,8
   // execute xgetbv and verify xcr0[7:5] = '111b' (1110,0000)
   // opmask, upper 256-bit zmm, and zmm
-  os_support = os_support && (xgetbv(0) & 0xC0 == 0xC0);
+  os_support = os_support && ((xgetbv(0) & 0xC0) == 0xC0);
   if (osxsave && b_avx512f && os_support) avx512f_ = true;
 
   // check AVX512DQ
