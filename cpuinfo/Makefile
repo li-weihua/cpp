@@ -1,5 +1,5 @@
 CC = g++
-FLAGS = -std=c++14 -O2
+FLAGS = -Wall -std=c++14 -O2
 
 testISA: test_isa.cc instruction_set.cc
 	$(CC) $(FLAGS) -o $@  $^

@@ -1,6 +1,17 @@
 #pragma once
 
+#include <string>
+
 #include "cpu_arch.h"
+
+// cpu vendor
+enum class CPUVendor {
+  UNKONWN,   // unkown
+  X86_INTEL, // intel x86/x64 cpu
+  X86_AMD,   // amd
+  X86_VIA,   // via
+
+};
 
 // detection instruction set
 //
@@ -13,7 +24,17 @@ public:
 
   // x86 isa
   #if defined(CPU_X86) || defined(CPU_X86_64)
-  inline const char * GetBrand() const {
+  inline CPUVendor GetVendor() const {
+    return vendor_;
+  }
+
+  inline std::string GetVendorString() const {
+    switch (vendor_) {
+      case CPUVendor::X86_INTEL: return "INTEL";
+      case CPUVendor::X86_AMD:   return "AMD";
+      case CPUVendor::X86_VIA:   return "VIA";
+      case CPUVendor::UNKONWN: return "UNKONWN";
+    }
   }
 
   inline int GetLevel() const {
@@ -106,6 +127,9 @@ public:
   #endif
 
 private:
+  // cpu vendor
+  CPUVendor vendor_;
+    
   // for x86
   int level_;
   bool sse_;

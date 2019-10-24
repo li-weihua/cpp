@@ -9,6 +9,7 @@ inline const char * const BoolString(bool b) {
 
 int main() {
 
+  std::cout << "cpu vendor: " << GetISA()->GetVendorString() << std::endl;
   std::cout << "support SSE: " << BoolString(GetISA()->HasSSE()) << std::endl;
   std::cout << "support SSE2: " << BoolString(GetISA()->HasSSE2()) << std::endl;
   std::cout << "support SSE3: " << BoolString(GetISA()->HasSSE3()) << std::endl;

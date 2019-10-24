@@ -9,6 +9,7 @@
 #endif
 
 InstructionSet::InstructionSet(): 
+  vendor_(CPUVendor::UNKONWN),
   level_(0),
   sse_(false),
   sse2_(false),
@@ -32,7 +33,16 @@ InstructionSet::InstructionSet():
   avx512pf_(false), 
   avx512_ifma_(false) {
 
-  cpuid_regs regs = cpuid(1);
+  // get cpu vendor
+  cpuid_regs regs = cpuid(0);
+  // Intel "GenuineIntel"
+  if (regs.ecx == 0x6C65746E) vendor_ = CPUVendor::X86_INTEL;
+  // AMD   "AuthenticAMD"
+  if (regs.ecx == 0x444D4163) vendor_ = CPUVendor::X86_AMD;
+  // VIA   "CentaurHauls"
+  if (regs.ebx == 0x746E6543) vendor_ = CPUVendor::X86_VIA;
+
+  regs = cpuid(1);
 
   // check SSE
   if (regs.edx & (1<<25)) sse_   = true;
