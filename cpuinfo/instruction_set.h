@@ -35,6 +35,7 @@ public:
       case CPUVendor::X86_VIA:   return "VIA";
       case CPUVendor::UNKONWN: return "UNKONWN";
     }
+    return "UNKONWN";
   }
 
   inline int GetLevel() const {

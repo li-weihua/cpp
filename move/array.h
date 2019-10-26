@@ -1,3 +1,5 @@
+#pragma once
+
 // Array class only movable, not copyable
 class Array {
 public:
@@ -17,17 +19,17 @@ public:
 
   Array& operator=(Array &&rhs) noexcept{
     if (this != &rhs) {
+      // free existing data
       if (data_ != nullptr) {
         free(data_);
-        data_ = nullptr;
-        n_ = 0;
       }
 
       data_ = rhs.data_;
-      n_ = rhs.n_;
+      n_ = rhs.n_; 
       rhs.data_ = nullptr;
       rhs.n_ = 0;
     }
+
     return *this;
   }
 

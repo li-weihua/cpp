@@ -44,6 +44,15 @@ InstructionSet::InstructionSet():
 
   regs = cpuid(1);
 
+  // get cpu family and model
+  // NOTE
+  // we assume that processor is not too old!
+  // for Pentium™ 4, family id is 0FH
+  // we don't consider this!
+
+  int family = ((regs.eax >> 8) & 0x0F) + ((regs.eax >> 20 ) & 0xFF);
+  int model = ((regs.eax >> 4) & 0x0F) + ((regs.eax >> 12 ) & 0xF0);
+
   // check SSE
   if (regs.edx & (1<<25)) sse_   = true;
   if (regs.edx & (1<<26)) sse2_  = true;

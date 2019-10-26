@@ -15,10 +15,12 @@ int main() {
   }
   std::cout << std::endl;
 
-  auto b = std::move(a);
+  Array b; 
 
-  std::cout << "b length: " << b.Length() << std::endl;
+  b = std::move(a);
+
   std::cout << "a length: " << a.Length() << std::endl;
+  std::cout << "b length: " << b.Length() << std::endl;
 
   return 0;
 }
