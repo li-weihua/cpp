@@ -19,7 +19,7 @@ This repository records various small c/c++ programs when I am learning!
 * [cpuinfo](./cpuinfo) get cpu isa.
 
 ## c++ learning
-Q: what's the difference between initializer list vs constructor?
+### What's the difference between initializer list vs constructor?
 
 A: They are not the same if objects are *non-POD* (i.e. non-Plain Old Data) types:
 ```c++
@@ -40,4 +40,10 @@ public:
 because they will be initialized before the constructor body starts executing, so basically twice the work is done. That also means, if the type of these members don't have default constructor, then your code will not compile.
 
 ps: Initializer List is the only way to initialize const members! 
+
+### What is meant by Resource Acquisition is Initialization (RAII)?
+
+A: It's a really terrible name. It truely means **Scope-Bound Resource Management!**
+
+
 
